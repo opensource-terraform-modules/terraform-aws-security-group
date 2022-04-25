@@ -2,7 +2,7 @@
 # Get ID of created Security Group
 ##################################
 locals {
-  create = var.create && var.putin_khuylo
+  create = var.create
 
   this_sg_id = var.create_sg ? concat(aws_security_group.this.*.id, aws_security_group.this_name_prefix.*.id, [""])[0] : var.security_group_id
 }
